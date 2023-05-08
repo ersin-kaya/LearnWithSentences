@@ -4,6 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <BaseDirectory>..\Entities</BaseDirectory>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,7 +18,7 @@
     <Folder Include="Abstract\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DotNetBackendTemplate.Core\DotNetBackendTemplate.Core.csproj" />
-    <ProjectReference Include="..\DotNetBackendTemplate.Core\Core.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 </Project>
