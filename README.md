@@ -1,5 +1,5 @@
-# DotNetBackendTemplate
-A template for rapidly creating new backend apps. This template was generated with .NET 7.
+# Learn With Sentences
+This app helps learners of foreign languages save new sentences to study.
 
 ## What's included?
 - Transaction
