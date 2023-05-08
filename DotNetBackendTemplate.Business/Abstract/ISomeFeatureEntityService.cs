@@ -1,8 +1,8 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.Utilities.Results.Abstract;
-using DotNetBackendTemplate.Entities.Concrete;
+using Core.Utilities.Results.Abstract;
+using Entities.Concrete;
 
-namespace DotNetBackendTemplate.Business.Abstract
+namespace Business.Abstract
 {
 	public interface ISomeFeatureEntityService
 	{

@@ -7,17 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Abstract\" />
     <None Remove="Concrete\" />
-    <None Remove="Concrete\EntityFramework\" />
+    <None Remove="DTOs\" />
+    <None Remove="Abstract\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Abstract\" />
     <Folder Include="Concrete\" />
-    <Folder Include="Concrete\EntityFramework\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Abstract\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DotNetBackendTemplate.Core\DotNetBackendTemplate.Core.csproj" />
-    <ProjectReference Include="..\DotNetBackendTemplate.Entities\DotNetBackendTemplate.Entities.csproj" />
+    <ProjectReference Include="..\DotNetBackendTemplate.Core\Core.csproj" />
   </ItemGroup>
 </Project>

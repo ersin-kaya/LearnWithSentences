@@ -1,10 +1,10 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.Utilities.IoC;
+using Core.Utilities.IoC;
 using Microsoft.Extensions.Caching.Memory;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DotNetBackendTemplate.Core.CrossCuttingConcerns.Caching.Microsoft
+namespace Core.CrossCuttingConcerns.Caching.Microsoft
 {
     public class MemoryCacheManager : ICacheManager
     {

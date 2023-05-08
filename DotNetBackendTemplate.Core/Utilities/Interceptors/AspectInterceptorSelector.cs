@@ -2,7 +2,7 @@
 using System.Reflection;
 using Castle.DynamicProxy;
 
-namespace DotNetBackendTemplate.Core.Utilities.Interceptors
+namespace Core.Utilities.Interceptors
 {
 	public class AspectInterceptorSelector : IInterceptorSelector
     {

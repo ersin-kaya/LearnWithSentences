@@ -1,9 +1,9 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.Entities.Concrete;
-using DotNetBackendTemplate.Core.Entities.DTOs;
-using DotNetBackendTemplate.Core.Utilities.Results.Abstract;
+using Core.Entities.Concrete;
+using Core.Entities.DTOs;
+using Core.Utilities.Results.Abstract;
 
-namespace DotNetBackendTemplate.Business.Abstract
+namespace Business.Abstract
 {
     public interface IAccountService
     {

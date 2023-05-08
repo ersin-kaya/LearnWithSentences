@@ -1,11 +1,11 @@
 ﻿using System;
 using Castle.DynamicProxy;
-using DotNetBackendTemplate.Core.CrossCuttingConcerns.Caching;
-using DotNetBackendTemplate.Core.Utilities.Interceptors;
-using DotNetBackendTemplate.Core.Utilities.IoC;
+using Core.CrossCuttingConcerns.Caching;
+using Core.Utilities.Interceptors;
+using Core.Utilities.IoC;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DotNetBackendTemplate.Core.Aspects.Autofac.Caching
+namespace Core.Aspects.Autofac.Caching
 {
     public class CacheRemoveAspect : MethodInterception
     {

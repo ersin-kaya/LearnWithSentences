@@ -1,13 +1,13 @@
 ﻿using System;
-using DotNetBackendTemplate.Business.Abstract;
-using DotNetBackendTemplate.Core.Entities.Concrete;
-using DotNetBackendTemplate.Core.Utilities.Results.Abstract;
-using DotNetBackendTemplate.Core.Utilities.Results.Concrete;
-using DotNetBackendTemplate.Core.Utilities.Security.Hashing;
-using DotNetBackendTemplate.Core.Utilities.Security.JWT;
-using DotNetBackendTemplate.Entities.DTOs;
+using Business.Abstract;
+using Core.Entities.Concrete;
+using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
+using Core.Utilities.Security.Hashing;
+using Core.Utilities.Security.JWT;
+using Entities.DTOs;
 
-namespace DotNetBackendTemplate.Business.Concrete
+namespace Business.Concrete
 {
     public class AuthManager : IAuthService
     {

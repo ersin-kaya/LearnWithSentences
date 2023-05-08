@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace DotNetBackendTemplate.Core.Utilities.Security.Hashing
+namespace Core.Utilities.Security.Hashing
 {
     public class HashingHelper
     {

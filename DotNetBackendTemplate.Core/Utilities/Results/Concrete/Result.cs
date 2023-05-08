@@ -1,7 +1,7 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Abstract;
 
-namespace DotNetBackendTemplate.Core.Utilities.Results.Concrete
+namespace Core.Utilities.Results.Concrete
 {
 	public class Result : IResult
 	{

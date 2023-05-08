@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DotNetBackendTemplate.Core.Utilities.IoC
+namespace Core.Utilities.IoC
 {
     public static class ServiceTool
     {

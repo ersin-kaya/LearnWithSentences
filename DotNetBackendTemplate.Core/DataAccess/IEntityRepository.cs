@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
-using DotNetBackendTemplate.Core.Entities;
+using Core.Entities;
 
-namespace DotNetBackendTemplate.Core.DataAccess
+namespace Core.DataAccess
 {
 	public interface IEntityRepository<T> where T:class,IEntity,new()
 	{

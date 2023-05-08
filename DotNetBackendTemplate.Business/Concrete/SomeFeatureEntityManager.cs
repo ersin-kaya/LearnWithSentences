@@ -1,12 +1,12 @@
 ﻿using System;
-using DotNetBackendTemplate.Business.Abstract;
-using DotNetBackendTemplate.Core.Utilities.Business;
-using DotNetBackendTemplate.Core.Utilities.Results.Abstract;
-using DotNetBackendTemplate.Core.Utilities.Results.Concrete;
-using DotNetBackendTemplate.DataAccess.Abstract;
-using DotNetBackendTemplate.Entities.Concrete;
+using Business.Abstract;
+using Core.Utilities.Business;
+using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
+using DataAccess.Abstract;
+using Entities.Concrete;
 
-namespace DotNetBackendTemplate.Business.Concrete
+namespace Business.Concrete
 {
 	public class SomeFeatureEntityManager : ISomeFeatureEntityService
 	{

@@ -1,9 +1,9 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.DataAccess.EntityFramework;
-using DotNetBackendTemplate.DataAccess.Abstract;
-using DotNetBackendTemplate.Entities.Concrete;
+using Core.DataAccess.EntityFramework;
+using DataAccess.Abstract;
+using Entities.Concrete;
 
-namespace DotNetBackendTemplate.DataAccess.Concrete.EntityFramework
+namespace DataAccess.Concrete.EntityFramework
 {
 	public class EfSomeFeatureEntityDal : EfEntityRepositoryBase<SomeFeatureEntity, BaseDbContext>, ISomeFeatureEntityDal
 	{

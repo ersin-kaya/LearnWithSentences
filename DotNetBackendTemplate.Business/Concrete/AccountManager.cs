@@ -1,12 +1,12 @@
 ﻿using System;
-using DotNetBackendTemplate.Business.Abstract;
-using DotNetBackendTemplate.Core.Entities.Concrete;
-using DotNetBackendTemplate.Core.Entities.DTOs;
-using DotNetBackendTemplate.Core.Utilities.Results.Abstract;
-using DotNetBackendTemplate.Core.Utilities.Results.Concrete;
-using DotNetBackendTemplate.DataAccess.Abstract;
+using Business.Abstract;
+using Core.Entities.Concrete;
+using Core.Entities.DTOs;
+using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
+using DataAccess.Abstract;
 
-namespace DotNetBackendTemplate.Business.Concrete
+namespace Business.Concrete
 {
     public class AccountManager : IAccountService
     {

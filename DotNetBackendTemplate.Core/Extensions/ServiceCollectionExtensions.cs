@@ -1,8 +1,8 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.Utilities.IoC;
+using Core.Utilities.IoC;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DotNetBackendTemplate.Core.Extensions
+namespace Core.Extensions
 {
     public static class ServiceCollectionExtensions
     {

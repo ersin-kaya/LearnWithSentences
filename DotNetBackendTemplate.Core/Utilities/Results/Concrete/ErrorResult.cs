@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DotNetBackendTemplate.Core.Utilities.Results.Concrete
+namespace Core.Utilities.Results.Concrete
 {
 	public class ErrorResult : Result
 	{

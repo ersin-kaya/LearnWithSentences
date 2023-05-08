@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DotNetBackendTemplate.Core.Utilities.Security.JWT
+namespace Core.Utilities.Security.JWT
 {
     public class AccessToken
     {

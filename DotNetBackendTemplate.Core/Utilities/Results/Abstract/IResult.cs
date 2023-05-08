@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DotNetBackendTemplate.Core.Utilities.Results.Abstract
+namespace Core.Utilities.Results.Abstract
 {
 	public interface IResult
 	{

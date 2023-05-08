@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq.Expressions;
-using DotNetBackendTemplate.Core.Entities;
+using Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DotNetBackendTemplate.Core.DataAccess.EntityFramework
+namespace Core.DataAccess.EntityFramework
 {
 	public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
 		where TEntity : class, IEntity, new()

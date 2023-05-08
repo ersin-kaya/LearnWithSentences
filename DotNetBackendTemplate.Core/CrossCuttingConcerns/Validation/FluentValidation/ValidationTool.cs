@@ -1,7 +1,7 @@
 ﻿using System;
 using FluentValidation;
 
-namespace DotNetBackendTemplate.Core.CrossCuttingConcerns.Validation.FluentValidation
+namespace Core.CrossCuttingConcerns.Validation.FluentValidation
 {
 	public static class ValidationTool
 	{

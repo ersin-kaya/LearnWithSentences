@@ -1,9 +1,9 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.Entities.Concrete;
-using DotNetBackendTemplate.Entities.Concrete;
+using Core.Entities.Concrete;
+using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 
-namespace DotNetBackendTemplate.DataAccess.Concrete.EntityFramework
+namespace DataAccess.Concrete.EntityFramework
 {
 	public class BaseDbContext : DbContext
 	{

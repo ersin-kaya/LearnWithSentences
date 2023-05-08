@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.IdentityModel.Tokens;
 
-namespace DotNetBackendTemplate.Core.Utilities.Security.Encryption
+namespace Core.Utilities.Security.Encryption
 {
     public class SigningCredentialsHelper
     {

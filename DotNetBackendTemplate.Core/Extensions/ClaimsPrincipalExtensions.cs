@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Claims;
 
-namespace DotNetBackendTemplate.Core.Extensions
+namespace Core.Extensions
 {
     public static class ClaimsPrincipalExtensions
     {

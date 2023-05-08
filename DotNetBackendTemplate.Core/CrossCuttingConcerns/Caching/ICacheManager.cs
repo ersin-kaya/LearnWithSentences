@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DotNetBackendTemplate.Core.CrossCuttingConcerns.Caching
+namespace Core.CrossCuttingConcerns.Caching
 {
     public interface ICacheManager
     {

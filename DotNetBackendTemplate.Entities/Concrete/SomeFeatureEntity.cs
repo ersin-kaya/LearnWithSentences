@@ -1,7 +1,7 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.Entities;
+using Core.Entities;
 
-namespace DotNetBackendTemplate.Entities.Concrete
+namespace Entities.Concrete
 {
 	public class SomeFeatureEntity : IEntity
 	{

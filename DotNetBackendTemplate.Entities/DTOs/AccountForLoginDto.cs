@@ -1,7 +1,7 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.Entities;
+using Core.Entities;
 
-namespace DotNetBackendTemplate.Entities.DTOs
+namespace Entities.DTOs
 {
     public class AccountForLoginDto : IDTO
     {

@@ -1,14 +1,14 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.Entities.Concrete;
-using DotNetBackendTemplate.Core.Entities.DTOs;
-using DotNetBackendTemplate.Core.Extensions;
-using DotNetBackendTemplate.Core.Utilities.Security.Encryption;
+using Core.Entities.Concrete;
+using Core.Entities.DTOs;
+using Core.Extensions;
+using Core.Utilities.Security.Encryption;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.Extensions.Configuration;
 
-namespace DotNetBackendTemplate.Core.Utilities.Security.JWT
+namespace Core.Utilities.Security.JWT
 {
     public class JwtHelper : ITokenHelper
     {

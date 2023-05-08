@@ -1,12 +1,12 @@
 ﻿using System;
 using Castle.DynamicProxy;
-using DotNetBackendTemplate.Core.Extensions;
-using DotNetBackendTemplate.Core.Utilities.Interceptors;
-using DotNetBackendTemplate.Core.Utilities.IoC;
+using Core.Extensions;
+using Core.Utilities.Interceptors;
+using Core.Utilities.IoC;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DotNetBackendTemplate.Business.BusinessAspects.Autofac
+namespace Business.BusinessAspects.Autofac
 {
     public class SecuredOperation : MethodInterception
     {

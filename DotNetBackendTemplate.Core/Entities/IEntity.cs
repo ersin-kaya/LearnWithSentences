@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DotNetBackendTemplate.Core.Entities
+namespace Core.Entities
 {
 	public interface IEntity
 	{

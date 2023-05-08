@@ -1,10 +1,10 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using DotNetBackendTemplate.Core.Extensions;
-using DotNetBackendTemplate.Business.DependencyResolvers.Autofac;
-using DotNetBackendTemplate.Core.DependencyResolvers;
-using DotNetBackendTemplate.Core.Utilities.Security.Encryption;
-using DotNetBackendTemplate.Core.Utilities.Security.JWT;
+using Core.Extensions;
+using Business.DependencyResolvers.Autofac;
+using Core.DependencyResolvers;
+using Core.Utilities.Security.Encryption;
+using Core.Utilities.Security.JWT;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 

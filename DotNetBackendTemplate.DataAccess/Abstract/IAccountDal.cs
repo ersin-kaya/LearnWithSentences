@@ -1,9 +1,9 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.DataAccess;
-using DotNetBackendTemplate.Core.Entities.Concrete;
-using DotNetBackendTemplate.Core.Entities.DTOs;
+using Core.DataAccess;
+using Core.Entities.Concrete;
+using Core.Entities.DTOs;
 
-namespace DotNetBackendTemplate.DataAccess.Abstract
+namespace DataAccess.Abstract
 {
     public interface IAccountDal : IEntityRepository<Account>
     {

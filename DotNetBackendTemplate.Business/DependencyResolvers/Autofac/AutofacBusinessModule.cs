@@ -2,14 +2,14 @@
 using Autofac;
 using Autofac.Extras.DynamicProxy;
 using Castle.DynamicProxy;
-using DotNetBackendTemplate.Business.Abstract;
-using DotNetBackendTemplate.Business.Concrete;
-using DotNetBackendTemplate.Core.Utilities.Interceptors;
-using DotNetBackendTemplate.Core.Utilities.Security.JWT;
-using DotNetBackendTemplate.DataAccess.Abstract;
-using DotNetBackendTemplate.DataAccess.Concrete.EntityFramework;
+using Business.Abstract;
+using Business.Concrete;
+using Core.Utilities.Interceptors;
+using Core.Utilities.Security.JWT;
+using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
 
-namespace DotNetBackendTemplate.Business.DependencyResolvers.Autofac
+namespace Business.DependencyResolvers.Autofac
 {
 	public class AutofacBusinessModule : Module
 	{

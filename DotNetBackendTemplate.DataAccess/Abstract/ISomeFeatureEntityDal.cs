@@ -1,8 +1,8 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.DataAccess;
-using DotNetBackendTemplate.Entities.Concrete;
+using Core.DataAccess;
+using Entities.Concrete;
 
-namespace DotNetBackendTemplate.DataAccess.Abstract
+namespace DataAccess.Abstract
 {
 	public interface ISomeFeatureEntityDal : IEntityRepository<SomeFeatureEntity>
 	{

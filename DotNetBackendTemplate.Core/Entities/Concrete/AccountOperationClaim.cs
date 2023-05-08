@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DotNetBackendTemplate.Core.Entities.Concrete
+namespace Core.Entities.Concrete
 {
     public class AccountOperationClaim : IEntity
     {

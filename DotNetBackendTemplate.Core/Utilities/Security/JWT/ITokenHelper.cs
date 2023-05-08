@@ -1,8 +1,8 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.Entities.Concrete;
-using DotNetBackendTemplate.Core.Entities.DTOs;
+using Core.Entities.Concrete;
+using Core.Entities.DTOs;
 
-namespace DotNetBackendTemplate.Core.Utilities.Security.JWT
+namespace Core.Utilities.Security.JWT
 {
     public interface ITokenHelper
     {

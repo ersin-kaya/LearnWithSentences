@@ -35,8 +35,9 @@
     <Folder Include="Constants\Messages\Concrete\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DotNetBackendTemplate.Entities\DotNetBackendTemplate.Entities.csproj" />
     <ProjectReference Include="..\DotNetBackendTemplate.DataAccess\DotNetBackendTemplate.DataAccess.csproj" />
+    <ProjectReference Include="..\DotNetBackendTemplate.DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\DotNetBackendTemplate.Entities\Entities.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="7.0.1" />

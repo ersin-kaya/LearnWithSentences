@@ -2,7 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace DotNetBackendTemplate.Core.Utilities.Security.Encryption
+namespace Core.Utilities.Security.Encryption
 {
     public class SecurityKeyHelper
     {

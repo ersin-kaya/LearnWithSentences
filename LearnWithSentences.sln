@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1705.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBackendTemplate.Business", "DotNetBackendTemplate.Business\DotNetBackendTemplate.Business.csproj", "{F115FEEE-4FEB-410D-8D21-EE7A51D1DD0E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "DotNetBackendTemplate.Business\Business.csproj", "{F115FEEE-4FEB-410D-8D21-EE7A51D1DD0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBackendTemplate.DataAccess", "DotNetBackendTemplate.DataAccess\DotNetBackendTemplate.DataAccess.csproj", "{3A906A9F-2427-453F-A272-9B00ECE9CC8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DotNetBackendTemplate.DataAccess\DataAccess.csproj", "{3A906A9F-2427-453F-A272-9B00ECE9CC8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBackendTemplate.Entities", "DotNetBackendTemplate.Entities\DotNetBackendTemplate.Entities.csproj", "{57495B3B-72CC-413A-A830-007161FC6397}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "DotNetBackendTemplate.Entities\Entities.csproj", "{57495B3B-72CC-413A-A830-007161FC6397}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBackendTemplate.Core", "DotNetBackendTemplate.Core\DotNetBackendTemplate.Core.csproj", "{1BCCC7D9-E7EE-4D39-A1D2-193688CA42E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "DotNetBackendTemplate.Core\Core.csproj", "{1BCCC7D9-E7EE-4D39-A1D2-193688CA42E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBackendTemplate.WebApi", "DotNetBackendTemplate.WebApi\DotNetBackendTemplate.WebApi.csproj", "{E5139B3D-4BD0-445E-8A40-A8DD740C5049}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "DotNetBackendTemplate.WebApi\WebApi.csproj", "{E5139B3D-4BD0-445E-8A40-A8DD740C5049}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

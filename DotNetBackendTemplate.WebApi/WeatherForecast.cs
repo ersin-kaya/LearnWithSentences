@@ -1,4 +1,4 @@
-﻿namespace DotNetBackendTemplate.WebApi;
+﻿namespace WebApi;
 
 public class WeatherForecast
 {

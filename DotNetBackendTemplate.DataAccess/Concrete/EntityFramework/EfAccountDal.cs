@@ -1,10 +1,10 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.DataAccess.EntityFramework;
-using DotNetBackendTemplate.Core.Entities.Concrete;
-using DotNetBackendTemplate.Core.Entities.DTOs;
-using DotNetBackendTemplate.DataAccess.Abstract;
+using Core.DataAccess.EntityFramework;
+using Core.Entities.Concrete;
+using Core.Entities.DTOs;
+using DataAccess.Abstract;
 
-namespace DotNetBackendTemplate.DataAccess.Concrete.EntityFramework
+namespace DataAccess.Concrete.EntityFramework
 {
     public class EfAccountDal : EfEntityRepositoryBase<Account, BaseDbContext>, IAccountDal
     {

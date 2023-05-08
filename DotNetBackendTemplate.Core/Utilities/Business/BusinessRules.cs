@@ -1,7 +1,7 @@
 ﻿using System;
-using DotNetBackendTemplate.Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Abstract;
 
-namespace DotNetBackendTemplate.Core.Utilities.Business
+namespace Core.Utilities.Business
 {
 	public class BusinessRules
 	{

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DotNetBackendTemplate.Core.Entities.DTOs
+namespace Core.Entities.DTOs
 {
     public class AccountOperationClaimDetailDto : IDTO
     {
