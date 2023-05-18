@@ -35,8 +35,6 @@ namespace Business.Concrete
             HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
             var account = new Account
             {
-                AccountTypeId = accountForRegisterDto.AccountTypeId,
-                AccountStatusId = accountForRegisterDto.AccountStatusId,
                 Email = accountForRegisterDto.Email,
                 FirstName = accountForRegisterDto.FirstName,
                 LastName = accountForRegisterDto.LastName,
