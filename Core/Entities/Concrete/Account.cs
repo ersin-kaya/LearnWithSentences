@@ -11,7 +11,6 @@ namespace Core.Entities.Concrete
         public byte[] PasswordHash { get; set; }
         public string PhoneNumber { get; set; }
         public string ProfilePhotoPath { get; set; }
-        public bool Status { get; set; }
     }
 }
 
