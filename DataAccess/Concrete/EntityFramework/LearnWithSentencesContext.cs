@@ -13,6 +13,7 @@ namespace DataAccess.Concrete.EntityFramework
             string myDatabase = MyConnectionString.Database;
             string myUsername = MyConnectionString.Username;
             string myPassword = MyConnectionString.Password;
+
             optionsBuilder.UseSqlServer("Server="+myServerAddress+";Database="+myDatabase+";User="+myUsername+";Password="+myPassword+";Encrypt=False;");
         }
 
