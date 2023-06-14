@@ -9,7 +9,11 @@ namespace DataAccess.Concrete.EntityFramework
 	{
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost,1234;Database=DotNetBackendTemplate;");
+            string myServerAddress = MyConnectionString.ServerAddress;
+            string myDatabase = MyConnectionString.Database;
+            string myUsername = MyConnectionString.Username;
+            string myPassword = MyConnectionString.Password;
+            optionsBuilder.UseSqlServer("Server="+myServerAddress+";Database="+myDatabase+";User="+myUsername+";Password="+myPassword+";Encrypt=False;");
         }
 
         public DbSet<SomeFeatureEntity> SomeFeatureEntities { get; set; }
