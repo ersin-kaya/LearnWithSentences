@@ -6,11 +6,11 @@ using DataAccess.Abstract;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfAccountDal : EfEntityRepositoryBase<Account, BaseDbContext>, IAccountDal
+    public class EfAccountDal : EfEntityRepositoryBase<Account, LearnWithSentencesContext>, IAccountDal
     {
         public List<AccountOperationClaimDetailDto> GetClaims(Account account)
         {
-            using (var context = new BaseDbContext())
+            using (var context = new LearnWithSentencesContext())
             {
                 var result = from operationClaim in context.OperationClaims
                              join accountOperationClaim in context.AccountOperationClaims

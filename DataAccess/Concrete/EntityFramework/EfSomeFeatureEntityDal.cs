@@ -5,7 +5,7 @@ using Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-	public class EfSomeFeatureEntityDal : EfEntityRepositoryBase<SomeFeatureEntity, BaseDbContext>, ISomeFeatureEntityDal
+	public class EfSomeFeatureEntityDal : EfEntityRepositoryBase<SomeFeatureEntity, LearnWithSentencesContext>, ISomeFeatureEntityDal
 	{
 		public EfSomeFeatureEntityDal()
 		{
