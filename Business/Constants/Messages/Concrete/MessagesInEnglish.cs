@@ -3,8 +3,16 @@ using Business.Constants.Messages.Abstract;
 
 namespace Business.Constants.Messages.Concrete
 {
-	public class MessagesInEnglish : IMessageService
-	{
-	}
+    public class MessagesInEnglish : IMessageService
+    {
+        public MessagesInEnglish()
+        {
+            LanguageAlreadyExists = "The language already exists.";
+            LanguageAdded = "The language has been successfully added.";
+        }
+
+        public string LanguageAlreadyExists { get; }
+        public string LanguageAdded { get; }
+    }
 }
 
