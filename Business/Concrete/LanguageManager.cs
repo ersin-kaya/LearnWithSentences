@@ -1,5 +1,6 @@
 ﻿using System;
 using Business.Abstract;
+using Business.Constants.Messages.Abstract;
 using Core.Utilities.Business;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
@@ -11,10 +12,12 @@ namespace Business.Concrete
 	public class LanguageManager : ILanguageService
 	{
         ILanguageDal _languageDal;
+        IMessageService _messageService;
 
-        public LanguageManager(ILanguageDal languageDal)
+        public LanguageManager(ILanguageDal languageDal, IMessageService messageService)
         {
             _languageDal = languageDal;
+            _messageService = messageService;
         }
 
         public IResult Add(Language language)
@@ -25,7 +28,7 @@ namespace Business.Concrete
                 return result;
             }
             _languageDal.Add(language);
-            return new SuccessResult();
+            return new SuccessResult(_messageService.LanguageAdded);
         }
 
         public IResult Delete(Language language)
@@ -53,7 +56,7 @@ namespace Business.Concrete
             var result = _languageDal.GetAll(l => l.Name == languageName).Any();
             if (result)
             {
-                return new ErrorResult();
+                return new ErrorResult(_messageService.LanguageAlreadyExists);
             }
             return new SuccessResult();
         }
