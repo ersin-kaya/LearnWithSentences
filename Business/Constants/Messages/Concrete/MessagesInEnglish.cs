@@ -3,7 +3,7 @@ using Business.Constants.Messages.Abstract;
 
 namespace Business.Constants.Messages.Concrete
 {
-    public class MessagesInEnglish : IMessageService
+    public class MessagesInEnglish : IMessage
     {
         public MessagesInEnglish()
         {

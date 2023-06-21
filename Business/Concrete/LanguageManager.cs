@@ -12,12 +12,12 @@ namespace Business.Concrete
 	public class LanguageManager : ILanguageService
 	{
         ILanguageDal _languageDal;
-        IMessageService _messageService;
+        IMessage _message;
 
-        public LanguageManager(ILanguageDal languageDal, IMessageService messageService)
+        public LanguageManager(ILanguageDal languageDal, IMessage message)
         {
             _languageDal = languageDal;
-            _messageService = messageService;
+            _message = message;
         }
 
         public IResult Add(Language language)
@@ -28,7 +28,7 @@ namespace Business.Concrete
                 return result;
             }
             _languageDal.Add(language);
-            return new SuccessResult(_messageService.LanguageAdded);
+            return new SuccessResult(_message.LanguageAdded);
         }
 
         public IResult Delete(Language language)
@@ -56,7 +56,7 @@ namespace Business.Concrete
             var result = _languageDal.GetAll(l => l.Name == languageName).Any();
             if (result)
             {
-                return new ErrorResult(_messageService.LanguageAlreadyExists);
+                return new ErrorResult(_message.LanguageAlreadyExists);
             }
             return new SuccessResult();
         }
