@@ -3,6 +3,8 @@ using Business.Abstract;
 using Business.BusinessAspects.Autofac;
 using Business.Constants.Messages.Abstract;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Performance;
 using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Business;
 using Core.Utilities.Results.Abstract;
@@ -25,6 +27,7 @@ namespace Business.Concrete
 
         [SecuredOperation("language.add,language,admin")]
         [ValidationAspect(typeof(LanguageValidator))]
+        [CacheRemoveAspect("ILanguageService.Get")]
         public IResult Add(Language language)
         {
             IResult result = BusinessRules.Run(CheckIfLanguageExists(language.Name));
@@ -32,6 +35,7 @@ namespace Business.Concrete
             {
                 return result;
             }
+
             _languageDal.Add(language);
             return new SuccessResult(_message.LanguageAdded);
         }
@@ -41,9 +45,11 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
+        [CacheAspect]
+        [PerformanceAspect(3)]
         public IDataResult<List<Language>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Language>>(_languageDal.GetAll(), _message.LanguagesListed);
         }
 
         public IDataResult<Language> GetById(int languageId)

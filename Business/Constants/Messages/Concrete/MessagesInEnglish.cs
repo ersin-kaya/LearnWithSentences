@@ -7,10 +7,12 @@ namespace Business.Constants.Messages.Concrete
     {
         public MessagesInEnglish()
         {
+            LanguagesListed = "Languages were listed.";
             LanguageAlreadyExists = "The language already exists.";
             LanguageAdded = "The language has been successfully added.";
         }
 
+        public string LanguagesListed { get; }
         public string LanguageAlreadyExists { get; }
         public string LanguageAdded { get; }
     }
