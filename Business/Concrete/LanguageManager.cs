@@ -1,6 +1,8 @@
 ﻿using System;
 using Business.Abstract;
 using Business.Constants.Messages.Abstract;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Business;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
@@ -20,6 +22,7 @@ namespace Business.Concrete
             _message = message;
         }
 
+        [ValidationAspect(typeof(LanguageValidator))]
         public IResult Add(Language language)
         {
             IResult result = BusinessRules.Run(CheckIfLanguageExists(language.Name));
