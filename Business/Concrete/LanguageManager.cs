@@ -40,9 +40,12 @@ namespace Business.Concrete
             return new SuccessResult(_message.LanguageAdded);
         }
 
+        [SecuredOperation("language.delete,language,admin")]
+        [CacheRemoveAspect("ILanguageService.Get")]
         public IResult Delete(Language language)
         {
-            throw new NotImplementedException();
+            _languageDal.Delete(language);
+            return new SuccessResult(_message.LanguageDeleted);
         }
 
         [CacheAspect]

@@ -6,6 +6,7 @@ namespace Business.Constants.Messages.Abstract
         string LanguagesListed { get; }
         string LanguageAlreadyExists { get; }
         string LanguageAdded { get; }
+        string LanguageDeleted { get; }
     }
 }
 
