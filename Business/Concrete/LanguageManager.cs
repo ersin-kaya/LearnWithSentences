@@ -61,9 +61,19 @@ namespace Business.Concrete
             return new SuccessDataResult<Language>(_languageDal.Get(l => l.Id == languageId));
         }
 
+        [SecuredOperation("language.update,language,admin")]
+        [ValidationAspect(typeof(LanguageValidator))]
+        [CacheRemoveAspect("ILanguageService.Get")]
         public IResult Update(Language language)
         {
-            throw new NotImplementedException();
+            IResult result = BusinessRules.Run(CheckIfLanguageExists(language.Name));
+            if (result != null)
+            {
+                return result;
+            }
+
+            _languageDal.Update(language);
+            return new SuccessResult(_message.LanguageUpdated);
         }
 
         private IResult CheckIfLanguageExists(string languageName)
