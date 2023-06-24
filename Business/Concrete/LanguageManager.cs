@@ -55,9 +55,10 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Language>>(_languageDal.GetAll(), _message.LanguagesListed);
         }
 
+        [CacheAspect]
         public IDataResult<Language> GetById(int languageId)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Language>(_languageDal.Get(l => l.Id == languageId));
         }
 
         public IResult Update(Language language)
