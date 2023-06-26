@@ -29,12 +29,12 @@ namespace Business.Concrete
             }
 
             _folderDal.Add(folder);
-            return new SuccessResult();
+            return new SuccessResult(_message.FolderAdded);
         }
 
         public IDataResult<List<Folder>> GetAll()
         {
-            return new SuccessDataResult<List<Folder>>(_folderDal.GetAll());
+            return new SuccessDataResult<List<Folder>>(_folderDal.GetAll(), _message.FoldersListed);
         }
 
         public IDataResult<List<Folder>> GetByAccountId(int accountId)
@@ -52,7 +52,7 @@ namespace Business.Concrete
             var result = _folderDal.GetAll(f => f.Name == folderName).Any();
             if (result)
             {
-                return new ErrorResult();
+                return new ErrorResult(_message.FolderAlreadyExists);
             }
             return new SuccessResult();
         }
