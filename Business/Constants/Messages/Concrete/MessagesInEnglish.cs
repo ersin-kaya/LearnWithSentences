@@ -18,6 +18,7 @@ namespace Business.Constants.Messages.Concrete
             FoldersListed = "Folders were listed.";
             FolderAlreadyExists = "The folder name already exists.";
             FolderAdded = "The folder has been successfully added.";
+            FolderUpdated = "The folder has been updated.";
         }
 
         //Language
@@ -31,6 +32,7 @@ namespace Business.Constants.Messages.Concrete
         public string FoldersListed { get; }
         public string FolderAlreadyExists { get; }
         public string FolderAdded { get; }
+        public string FolderUpdated { get; }
     }
 }
 
