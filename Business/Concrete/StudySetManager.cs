@@ -1,7 +1,13 @@
 ﻿using System;
 using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants.Messages.Abstract;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Validation;
+using Core.Utilities.Business;
 using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 
@@ -18,9 +24,19 @@ namespace Business.Concrete
             _message = message;
 		}
 
+        [SecuredOperation("studyset.add,studyset,admin")]
+        [ValidationAspect(typeof(StudySetValidator))]
+        [CacheRemoveAspect("IStudySetService.Get")]
         public IResult Add(StudySet studySet)
         {
-            throw new NotImplementedException();
+            IResult result = BusinessRules.Run(CheckIfStudySetNameExists(studySet.Name));
+            if (result != null)
+            {
+                return result;
+            }
+
+            _studySetDal.Add(studySet);
+            return new SuccessResult(_message.StudySetAdded);
         }
 
         public IDataResult<List<StudySet>> GetAll()
@@ -51,6 +67,17 @@ namespace Business.Concrete
         public IResult Update(StudySet studySet)
         {
             throw new NotImplementedException();
+        }
+
+        //refactor - add accountId
+        private IResult CheckIfStudySetNameExists(string studySetName)
+        {
+            var result = _studySetDal.GetAll(s => s.Name == studySetName).Any();
+            if (result)
+            {
+                return new ErrorResult(_message.StudySetAlreadyExists);
+            }
+            return new SuccessResult();
         }
     }
 }

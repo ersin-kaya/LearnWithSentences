@@ -19,6 +19,12 @@ namespace Business.Constants.Messages.Concrete
             FolderAlreadyExists = "The folder name already exists.";
             FolderAdded = "The folder has been successfully added.";
             FolderUpdated = "The folder has been updated.";
+
+            //StudySet
+            StudySetsListed = "Study sets were listed.";
+            StudySetAlreadyExists = "The study set name already exists.";
+            StudySetAdded = "The study set has been successfully added.";
+            StudySetUpdated = "The study set has been updated.";
         }
 
         //Language
@@ -33,6 +39,12 @@ namespace Business.Constants.Messages.Concrete
         public string FolderAlreadyExists { get; }
         public string FolderAdded { get; }
         public string FolderUpdated { get; }
+
+        //StudySet
+        public string StudySetsListed { get; }
+        public string StudySetAlreadyExists { get; }
+        public string StudySetAdded { get; }
+        public string StudySetUpdated { get; }
     }
 }
 
