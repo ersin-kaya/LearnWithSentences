@@ -4,6 +4,7 @@ using Business.BusinessAspects.Autofac;
 using Business.Constants.Messages.Abstract;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Performance;
 using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Business;
 using Core.Utilities.Results.Abstract;
@@ -39,34 +40,53 @@ namespace Business.Concrete
             return new SuccessResult(_message.StudySetAdded);
         }
 
+        [CacheAspect]
+        [PerformanceAspect(4)]
         public IDataResult<List<StudySet>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<StudySet>>(_studySetDal.GetAll(), _message.StudySetsListed);
         }
 
+        [CacheAspect]
+        [PerformanceAspect(3)]
         public IDataResult<List<StudySet>> GetByAccountId(int accountId)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<StudySet>>(_studySetDal.GetAll(s => s.AccountId == accountId));
         }
 
+        [CacheAspect]
+        [PerformanceAspect(3)]
         public IDataResult<List<StudySet>> GetByFolderId(int folderId)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<StudySet>>(_studySetDal.GetAll(s => s.FolderId == folderId));
         }
 
+        [CacheAspect]
         public IDataResult<StudySet> GetById(int studySetId)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<StudySet>(_studySetDal.Get(s => s.Id == studySetId));
         }
 
-        public IDataResult<List<StudySet>> GetByNativeAndTargetLanguageIds(int[] nativeAndTargetLanguageIds)
+        [CacheAspect]
+        [PerformanceAspect(4)]
+        public IDataResult<List<StudySet>> GetByNativeAndTargetLanguageIds(int nativeLanguageId, int targetLanguageId)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<StudySet>>(_studySetDal.GetAll(s => s.NativeLanguageId == nativeLanguageId && s.TargetLanguageId == targetLanguageId));
         }
 
+        [SecuredOperation("studyset.update,studyset,admin")]
+        [ValidationAspect(typeof(StudySetValidator))]
+        [CacheRemoveAspect("IStudySetService.Get")]
         public IResult Update(StudySet studySet)
         {
-            throw new NotImplementedException();
+            IResult result = BusinessRules.Run(CheckIfStudySetNameExists(studySet.Name));
+            if (result != null)
+            {
+                return result;
+            }
+
+            _studySetDal.Update(studySet);
+            return new SuccessResult(_message.StudySetUpdated);
         }
 
         //refactor - add accountId
