@@ -75,6 +75,7 @@ namespace Business.Concrete
             return new SuccessResult(_message.FolderUpdated);
         }
 
+        //refactor - add accountId
         private IResult CheckIfFolderNameExists(string folderName)
         {
             var result = _folderDal.GetAll(f => f.Name == folderName).Any();
