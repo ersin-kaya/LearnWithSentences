@@ -36,6 +36,7 @@
     <None Remove="Utilities\Security\Encryption\" />
     <None Remove="Utilities\Security\Hashing\" />
     <None Remove="Utilities\Security\JWT\" />
+    <None Remove="Utilities\AccountProvider\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -67,6 +68,7 @@
     <Folder Include="Utilities\Security\Encryption\" />
     <Folder Include="Utilities\Security\Hashing\" />
     <Folder Include="Utilities\Security\JWT\" />
+    <Folder Include="Utilities\AccountProvider\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
