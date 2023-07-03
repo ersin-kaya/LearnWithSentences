@@ -28,14 +28,15 @@ namespace Business.Concrete
         [SecuredOperation("folder.add,folder,admin")]
         [ValidationAspect(typeof(FolderValidator))]
         [CacheRemoveAspect("IFolderService.Get")]
-        public IResult Add(Folder folder)
+        public IResult Add(Folder folder, int accountId)
         {
-            IResult result = BusinessRules.Run(CheckIfFolderNameExists(folder.Name));
+            IResult result = BusinessRules.Run(CheckIfFolderNameExists(folder));
             if (result != null)
             {
                 return result;
             }
 
+            folder.AccountId = accountId;
             _folderDal.Add(folder);
             return new SuccessResult(_message.FolderAdded);
         }
@@ -65,7 +66,7 @@ namespace Business.Concrete
         [CacheRemoveAspect("IFolderService.Get")]
         public IResult Update(Folder folder)
         {
-            IResult result = BusinessRules.Run(CheckIfFolderNameExists(folder.Name));
+            IResult result = BusinessRules.Run(CheckIfFolderNameExists(folder));
             if (result != null)
             {
                 return result;
@@ -75,10 +76,9 @@ namespace Business.Concrete
             return new SuccessResult(_message.FolderUpdated);
         }
 
-        //refactor - add accountId
-        private IResult CheckIfFolderNameExists(string folderName)
+        private IResult CheckIfFolderNameExists(Folder folder)
         {
-            var result = _folderDal.GetAll(f => f.Name == folderName).Any();
+            var result = _folderDal.GetAll(f => f.AccountId == folder.AccountId && f.Name == folder.Name).Any();
             if (result)
             {
                 return new ErrorResult(_message.FolderAlreadyExists);

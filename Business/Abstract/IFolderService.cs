@@ -6,7 +6,7 @@ namespace Business.Abstract
 {
 	public interface IFolderService
     {
-        IResult Add(Folder folder);
+        IResult Add(Folder folder, int accountId);
         IResult Update(Folder folder);
         IDataResult<List<Folder>> GetAll();
         IDataResult<Folder> GetById(int folderId);
