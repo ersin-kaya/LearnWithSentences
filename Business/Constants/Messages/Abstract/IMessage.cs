@@ -15,6 +15,7 @@ namespace Business.Constants.Messages.Abstract
         string FolderAlreadyExists { get; }
         string FolderAdded { get; }
         string FolderUpdated { get; }
+        string FolderCouldNotBeCreated { get; }
 
         //StudySet
         string StudySetsListed { get; }

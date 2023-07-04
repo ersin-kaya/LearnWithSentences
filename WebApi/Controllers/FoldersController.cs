@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Business.Constants.Messages.Abstract;
+using Core.Utilities.AccountProvider;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,10 +15,14 @@ namespace WebApi.Controllers
     public class FoldersController : ControllerBase
     {
         IFolderService _folderService;
+        IAccountProvider _accountProvider;
+        IMessage _message;
 
-        public FoldersController(IFolderService folderService)
+        public FoldersController(IFolderService folderService, IAccountProvider accountProvider, IMessage message)
         {
             _folderService = folderService;
+            _accountProvider = accountProvider;
+            _message = message;
         }
 
         [HttpGet("getall")]
@@ -58,13 +64,17 @@ namespace WebApi.Controllers
         [HttpPost("add")]
         public IActionResult Add(Folder folder)
         {
-            var result = _folderService.Add(folder);
-
-            if (result.Success)
+            if (Int32.TryParse(_accountProvider.GetAccountId(), out int accountId))
             {
-                return Ok(result);
+                var result = _folderService.Add(folder, accountId);
+
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                return BadRequest(result);
             }
-            return BadRequest(result);
+            return BadRequest(_message.FolderCouldNotBeCreated);
         }
 
         [HttpPost("update")]

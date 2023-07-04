@@ -1,5 +1,6 @@
 ﻿using System;
 using Business.Constants.Messages.Abstract;
+using Entities.Concrete;
 
 namespace Business.Constants.Messages.Concrete
 {
@@ -19,6 +20,7 @@ namespace Business.Constants.Messages.Concrete
             FolderAlreadyExists = "The folder name already exists.";
             FolderAdded = "The folder has been successfully added.";
             FolderUpdated = "The folder has been updated.";
+            FolderCouldNotBeCreated = "The folder could not be created.";
 
             //StudySet
             StudySetsListed = "Study sets were listed.";
@@ -39,6 +41,7 @@ namespace Business.Constants.Messages.Concrete
         public string FolderAlreadyExists { get; }
         public string FolderAdded { get; }
         public string FolderUpdated { get; }
+        public string FolderCouldNotBeCreated { get; set; }
 
         //StudySet
         public string StudySetsListed { get; }
