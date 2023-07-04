@@ -6,7 +6,7 @@ namespace Business.Abstract
 {
 	public interface IStudySetService
 	{
-		IResult Add(StudySet studySet);
+		IResult Add(StudySet studySet, int accountId);
 		IResult Update(StudySet studySet);
 		IDataResult<List<StudySet>> GetAll();
 		IDataResult<StudySet> GetById(int studySetId);
