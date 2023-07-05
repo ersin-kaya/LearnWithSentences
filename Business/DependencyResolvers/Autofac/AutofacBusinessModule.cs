@@ -8,6 +8,7 @@ using Core.Utilities.Interceptors;
 using Core.Utilities.Security.JWT;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using Core.Utilities.AccountProvider;
 
 namespace Business.DependencyResolvers.Autofac
 {
@@ -18,8 +19,13 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<EfSomeFeatureEntityDal>().As<ISomeFeatureEntityDal>().SingleInstance();
             builder.RegisterType<SomeFeatureEntityManager>().As<ISomeFeatureEntityService>().SingleInstance();
 
-            builder.RegisterType<AccountManager>().As<IAccountService>();
+            builder.RegisterType<EfFolderDal>().As<IFolderDal>();
+            builder.RegisterType<FolderManager>().As<IFolderService>();
+
             builder.RegisterType<EfAccountDal>().As<IAccountDal>();
+            builder.RegisterType<AccountManager>().As<IAccountService>();
+
+            builder.RegisterType<AccountProvider>().As<IAccountProvider>();
 
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
