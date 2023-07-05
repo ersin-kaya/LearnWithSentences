@@ -15,7 +15,14 @@ namespace Core.Utilities.AccountProvider
 
         public string GetAccountId()
         {
-            return _httpContextAccessor.HttpContext.User.Claims.First(i => i.Type == ClaimTypes.NameIdentifier).Value;
+            try
+            {
+                return _httpContextAccessor.HttpContext.User.Claims.First(i => i.Type == ClaimTypes.NameIdentifier).Value;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
     }
 }
