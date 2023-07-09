@@ -88,6 +88,18 @@ namespace WebApi.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpPost("delete")]
+        public IActionResult Delete(Folder folder)
+        {
+            var result = _folderService.Delete(folder);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }
 

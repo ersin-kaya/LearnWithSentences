@@ -20,6 +20,7 @@ namespace Business.Constants.Messages.Concrete
             FolderAlreadyExists = "The folder name already exists.";
             FolderAdded = "The folder has been successfully added.";
             FolderUpdated = "The folder has been updated.";
+            FolderDeleted = "The folder has been deleted.";
             FolderCouldNotBeCreated = "The folder could not be created.";
 
             //StudySet
@@ -41,7 +42,8 @@ namespace Business.Constants.Messages.Concrete
         public string FolderAlreadyExists { get; }
         public string FolderAdded { get; }
         public string FolderUpdated { get; }
-        public string FolderCouldNotBeCreated { get; set; }
+        public string FolderDeleted { get; }
+        public string FolderCouldNotBeCreated { get; }
 
         //StudySet
         public string StudySetsListed { get; }

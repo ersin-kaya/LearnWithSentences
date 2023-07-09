@@ -41,6 +41,14 @@ namespace Business.Concrete
             return new SuccessResult(_message.FolderAdded);
         }
 
+        [SecuredOperation("folder.delete,folder,admin")]
+        [CacheRemoveAspect("IFolderService.Get")]
+        public IResult Delete(Folder folder)
+        {
+            _folderDal.Delete(folder);
+            return new SuccessResult(_message.FolderDeleted);
+        }
+
         [CacheAspect]
         [PerformanceAspect(3)]
         public IDataResult<List<Folder>> GetAll()

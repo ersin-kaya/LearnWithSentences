@@ -8,6 +8,7 @@ namespace Business.Abstract
     {
         IResult Add(Folder folder, int accountId);
         IResult Update(Folder folder);
+        IResult Delete(Folder folder);
         IDataResult<List<Folder>> GetAll();
         IDataResult<Folder> GetById(int folderId);
         IDataResult<List<Folder>> GetByAccountId(int accountId);
