@@ -19,6 +19,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<EfSomeFeatureEntityDal>().As<ISomeFeatureEntityDal>().SingleInstance();
             builder.RegisterType<SomeFeatureEntityManager>().As<ISomeFeatureEntityService>().SingleInstance();
 
+            builder.RegisterType<EfLanguageDal>().As<ILanguageDal>().SingleInstance();
+            builder.RegisterType<LanguageManager>().As<ILanguageService>().SingleInstance();
+
             builder.RegisterType<EfFolderDal>().As<IFolderDal>();
             builder.RegisterType<FolderManager>().As<IFolderService>();
 
