@@ -22,8 +22,8 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<EfLanguageDal>().As<ILanguageDal>().SingleInstance();
             builder.RegisterType<LanguageManager>().As<ILanguageService>().SingleInstance();
 
-            builder.RegisterType<EfFolderDal>().As<IFolderDal>();
-            builder.RegisterType<FolderManager>().As<IFolderService>();
+            builder.RegisterType<EfFolderDal>().As<IFolderDal>().SingleInstance();
+            builder.RegisterType<FolderManager>().As<IFolderService>().SingleInstance();
 
             builder.RegisterType<EfAccountDal>().As<IAccountDal>();
             builder.RegisterType<AccountManager>().As<IAccountService>();
