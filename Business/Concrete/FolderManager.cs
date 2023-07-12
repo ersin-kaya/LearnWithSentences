@@ -45,7 +45,8 @@ namespace Business.Concrete
         [CacheRemoveAspect("IFolderService.Get")]
         public IResult Delete(Folder folder)
         {
-            _folderDal.Delete(folder);
+            folder.Visibility = false;
+            _folderDal.Update(folder);
             return new SuccessResult(_message.FolderDeleted);
         }
 
