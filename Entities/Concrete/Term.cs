@@ -14,6 +14,8 @@ namespace Entities.Concrete
 		public bool IsStarred { get; set; }
 		public bool ILearned { get; set; }
 		public int DefinitionCount { get; set; }
-	}
+        public DateTime CreatedTime { get; set; }
+        public DateTime LastUpdatedTime { get; set; }
+    }
 }
 

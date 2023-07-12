@@ -11,6 +11,8 @@ namespace Entities.Concrete
 		public int Priority { get; set; }
 		public bool Visibility { get; set; }
 		public bool IsPrivate { get; set; }
-	}
+        public DateTime CreatedTime { get; set; }
+        public DateTime LastUpdatedTime { get; set; }
+    }
 }
 
