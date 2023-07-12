@@ -53,13 +53,13 @@ namespace Business.Concrete
         [PerformanceAspect(3)]
         public IDataResult<List<Language>> GetAll()
         {
-            return new SuccessDataResult<List<Language>>(_languageDal.GetAll(), _message.LanguagesListed);
+            return new SuccessDataResult<List<Language>>(_languageDal.GetAll(l => l.Visibility == true), _message.LanguagesListed);
         }
 
         [CacheAspect]
         public IDataResult<Language> GetById(int languageId)
         {
-            return new SuccessDataResult<Language>(_languageDal.Get(l => l.Id == languageId));
+            return new SuccessDataResult<Language>(_languageDal.Get(l => l.Id == languageId && l.Visibility == true));
         }
 
         [SecuredOperation("language.update,language,admin")]
@@ -79,7 +79,7 @@ namespace Business.Concrete
 
         private IResult CheckIfLanguageExists(string languageName)
         {
-            var result = _languageDal.GetAll(l => l.Name == languageName).Any();
+            var result = _languageDal.GetAll(l => l.Name == languageName && l.Visibility == true).Any();
             if (result)
             {
                 return new ErrorResult(_message.LanguageAlreadyExists);
