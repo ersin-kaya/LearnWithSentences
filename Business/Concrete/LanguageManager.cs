@@ -44,7 +44,8 @@ namespace Business.Concrete
         [CacheRemoveAspect("ILanguageService.Get")]
         public IResult Delete(Language language)
         {
-            _languageDal.Delete(language);
+            language.Visibility = false;
+            _languageDal.Update(language);
             return new SuccessResult(_message.LanguageDeleted);
         }
 
