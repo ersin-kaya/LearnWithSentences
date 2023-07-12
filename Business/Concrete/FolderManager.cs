@@ -54,20 +54,20 @@ namespace Business.Concrete
         [PerformanceAspect(3)]
         public IDataResult<List<Folder>> GetAll()
         {
-            return new SuccessDataResult<List<Folder>>(_folderDal.GetAll(), _message.FoldersListed);
+            return new SuccessDataResult<List<Folder>>(_folderDal.GetAll(f => f.Visibility == true), _message.FoldersListed);
         }
 
         [CacheAspect]
         [PerformanceAspect(2)]
         public IDataResult<List<Folder>> GetByAccountId(int accountId)
         {
-            return new SuccessDataResult<List<Folder>>(_folderDal.GetAll(f => f.AccountId == accountId));
+            return new SuccessDataResult<List<Folder>>(_folderDal.GetAll(f => f.AccountId == accountId && f.Visibility == true));
         }
 
         [CacheAspect]
         public IDataResult<Folder> GetById(int folderId)
         {
-            return new SuccessDataResult<Folder>(_folderDal.Get(f => f.Id == folderId));
+            return new SuccessDataResult<Folder>(_folderDal.Get(f => f.Id == folderId && f.Visibility == true));
         }
 
         [SecuredOperation("folder.update,folder,admin")]
@@ -87,7 +87,7 @@ namespace Business.Concrete
 
         private IResult CheckIfFolderNameExists(Folder folder)
         {
-            var result = _folderDal.GetAll(f => f.AccountId == folder.AccountId && f.Name == folder.Name).Any();
+            var result = _folderDal.GetAll(f => f.AccountId == folder.AccountId && f.Name == folder.Name && f.Visibility == true).Any();
             if (result)
             {
                 return new ErrorResult(_message.FolderAlreadyExists);
