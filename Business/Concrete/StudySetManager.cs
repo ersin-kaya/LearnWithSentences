@@ -28,7 +28,7 @@ namespace Business.Concrete
         [SecuredOperation("studyset.add,studyset,admin")]
         [ValidationAspect(typeof(StudySetValidator))]
         [CacheRemoveAspect("IStudySetService.Get")]
-        public IResult Add(StudySet studySet, int accountId)
+        public IResult Add(StudySet studySet)
         {
             IResult result = BusinessRules.Run(CheckIfStudySetNameExists(studySet.Name));
             if (result != null)
@@ -36,7 +36,6 @@ namespace Business.Concrete
                 return result;
             }
 
-            studySet.AccountId = accountId;
             _studySetDal.Add(studySet);
             return new SuccessResult(_message.StudySetAdded);
         }
