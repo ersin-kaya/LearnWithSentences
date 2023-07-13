@@ -28,7 +28,7 @@ namespace Business.Concrete
         [SecuredOperation("folder.add,folder,admin")]
         [ValidationAspect(typeof(FolderValidator))]
         [CacheRemoveAspect("IFolderService.Get")]
-        public IResult Add(Folder folder, int accountId)
+        public IResult Add(Folder folder)
         {
             IResult result = BusinessRules.Run(CheckIfFolderNameExists(folder));
             if (result != null)
@@ -36,7 +36,6 @@ namespace Business.Concrete
                 return result;
             }
 
-            folder.AccountId = accountId;
             _folderDal.Add(folder);
             return new SuccessResult(_message.FolderAdded);
         }

@@ -66,7 +66,8 @@ namespace WebApi.Controllers
         {
             if (Int32.TryParse(_accountProvider.GetAccountId(), out int accountId))
             {
-                var result = _folderService.Add(folder, accountId);
+                folder.AccountId = accountId;
+                var result = _folderService.Add(folder);
 
                 if (result.Success)
                 {
