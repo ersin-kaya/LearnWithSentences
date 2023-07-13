@@ -8,6 +8,9 @@ namespace Business.Constants.Messages.Concrete
     {
         public MessagesInEnglish()
         {
+            //Parse Errors
+            ParseErrorForAccountId = "There was a problem while we were processing your account information.";
+
             //Language
             LanguagesListed = "Languages were listed.";
             LanguageAlreadyExists = "The language already exists.";
@@ -29,6 +32,9 @@ namespace Business.Constants.Messages.Concrete
             StudySetAdded = "The study set has been successfully added.";
             StudySetUpdated = "The study set has been updated.";
         }
+
+        //Parse Errors
+        public string ParseErrorForAccountId { get; }
 
         //Language
         public string LanguagesListed { get; }

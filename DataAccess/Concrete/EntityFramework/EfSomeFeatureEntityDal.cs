@@ -7,9 +7,6 @@ namespace DataAccess.Concrete.EntityFramework
 {
 	public class EfSomeFeatureEntityDal : EfEntityRepositoryBase<SomeFeatureEntity, LearnWithSentencesContext>, ISomeFeatureEntityDal
 	{
-		public EfSomeFeatureEntityDal()
-		{
-		}
 	}
 }
 

@@ -2,7 +2,10 @@
 namespace Business.Constants.Messages.Abstract
 {
 	public interface IMessage
-	{
+    {
+        //Parse Errors
+        string ParseErrorForAccountId { get; }
+
         //Language
         string LanguagesListed { get; }
         string LanguageAlreadyExists { get; }

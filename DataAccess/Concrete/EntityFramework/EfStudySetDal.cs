@@ -7,11 +7,6 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfStudySetDal : EfEntityRepositoryBase<StudySet, LearnWithSentencesContext>, IStudySetDal
     {
-        public void Add(StudySet studySet, int accountId)
-        {
-            studySet.AccountId = accountId;
-            Add(studySet);
-        }
     }
 }
 

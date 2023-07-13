@@ -6,7 +6,6 @@ namespace DataAccess.Abstract
 {
 	public interface IStudySetDal : IEntityRepository<StudySet>
 	{
-		void Add(StudySet studySet, int accountId);
 	}
 }
 

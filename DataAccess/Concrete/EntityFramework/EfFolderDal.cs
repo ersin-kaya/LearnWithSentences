@@ -9,11 +9,6 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfFolderDal : EfEntityRepositoryBase<Folder, LearnWithSentencesContext>, IFolderDal
     {
-        public void Add(Folder folder, int accountId)
-        {
-            folder.AccountId = accountId;
-            Add(folder);
-        }
     }
 }
 

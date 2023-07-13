@@ -7,7 +7,6 @@ namespace DataAccess.Abstract
 {
 	public interface IFolderDal : IEntityRepository<Folder>
     {
-        void Add(Folder folder, int accountId);
     }
 }
 
