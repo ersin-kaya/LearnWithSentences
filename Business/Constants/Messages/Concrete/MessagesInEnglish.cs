@@ -15,8 +15,8 @@ namespace Business.Constants.Messages.Concrete
             LanguagesListed = "Languages were listed.";
             LanguageAlreadyExists = "The language already exists.";
             LanguageAdded = "The language has been successfully added.";
-            LanguageDeleted = "The language has been deleted.";
             LanguageUpdated = "The language has been updated.";
+            LanguageDeleted = "The language has been deleted.";
 
             //Folder
             FoldersListed = "Folders were listed.";
@@ -24,7 +24,6 @@ namespace Business.Constants.Messages.Concrete
             FolderAdded = "The folder has been successfully added.";
             FolderUpdated = "The folder has been updated.";
             FolderDeleted = "The folder has been deleted.";
-            FolderCouldNotBeCreated = "The folder could not be created.";
 
             //StudySet
             StudySetsListed = "Study sets were listed.";
@@ -41,8 +40,8 @@ namespace Business.Constants.Messages.Concrete
         public string LanguagesListed { get; }
         public string LanguageAlreadyExists { get; }
         public string LanguageAdded { get; }
-        public string LanguageDeleted { get; }
         public string LanguageUpdated { get; }
+        public string LanguageDeleted { get; }
 
         //Folder
         public string FoldersListed { get; }
@@ -50,7 +49,6 @@ namespace Business.Constants.Messages.Concrete
         public string FolderAdded { get; }
         public string FolderUpdated { get; }
         public string FolderDeleted { get; }
-        public string FolderCouldNotBeCreated { get; }
 
         //StudySet
         public string StudySetsListed { get; }

@@ -75,7 +75,7 @@ namespace WebApi.Controllers
                 }
                 return BadRequest(result);
             }
-            return BadRequest(_message.FolderCouldNotBeCreated);
+            return BadRequest(_message.ParseErrorForAccountId);
         }
 
         [HttpPost("update")]

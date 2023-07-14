@@ -10,8 +10,8 @@ namespace Business.Constants.Messages.Abstract
         string LanguagesListed { get; }
         string LanguageAlreadyExists { get; }
         string LanguageAdded { get; }
-        string LanguageDeleted { get; }
         string LanguageUpdated { get; }
+        string LanguageDeleted { get; }
 
         //Folder
         string FoldersListed { get; }
@@ -19,7 +19,6 @@ namespace Business.Constants.Messages.Abstract
         string FolderAdded { get; }
         string FolderUpdated { get; }
         string FolderDeleted { get; }
-        string FolderCouldNotBeCreated { get; }
 
         //StudySet
         string StudySetsListed { get; }
