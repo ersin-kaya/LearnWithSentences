@@ -25,6 +25,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<EfFolderDal>().As<IFolderDal>().SingleInstance();
             builder.RegisterType<FolderManager>().As<IFolderService>().SingleInstance();
 
+            builder.RegisterType<EfStudySetDal>().As<IStudySetDal>().SingleInstance();
+            builder.RegisterType<StudySetManager>().As<IStudySetService>().SingleInstance();
+
             builder.RegisterType<EfAccountDal>().As<IAccountDal>();
             builder.RegisterType<AccountManager>().As<IAccountService>();
 
