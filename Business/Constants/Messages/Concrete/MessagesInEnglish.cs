@@ -9,7 +9,7 @@ namespace Business.Constants.Messages.Concrete
         public MessagesInEnglish()
         {
             //Parse Errors
-            ParseErrorForAccountId = "There was a problem while we were processing your account information.";
+            ParseErrorForAccountId = "There was a problem while we were accessing your account information.";
 
             //Language
             LanguagesListed = "Languages were listed.";
