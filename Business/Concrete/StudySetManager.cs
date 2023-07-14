@@ -78,9 +78,9 @@ namespace Business.Concrete
 
         [CacheAspect]
         [PerformanceAspect(4)]
-        public IDataResult<List<StudySet>> GetByNativeAndTargetLanguageIds(int nativeLanguageId, int targetLanguageId)
+        public IDataResult<List<StudySet>> GetByTargetAndNativeLanguageIds(int targetLanguageId, int nativeLanguageId)
         {
-            return new SuccessDataResult<List<StudySet>>(_studySetDal.GetAll(s => s.NativeLanguageId == nativeLanguageId && s.TargetLanguageId == targetLanguageId && s.Visibility == true));
+            return new SuccessDataResult<List<StudySet>>(_studySetDal.GetAll(s => s.TargetLanguageId == targetLanguageId && s.NativeLanguageId == nativeLanguageId && s.Visibility == true));
         }
 
         [SecuredOperation("studyset.update,studyset,admin")]

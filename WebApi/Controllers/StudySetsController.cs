@@ -73,10 +73,10 @@ namespace WebApi.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("getbynativeandtargetlanguageids")]
-        public IActionResult GetByNativeAndTargetLanguageIds(int nativeLanguageId, int targetLanguageId)
+        [HttpGet("getbytargetandnativelanguageids")]
+        public IActionResult GetByTargetAndNativeLanguageIds(int targetLanguageId, int nativeLanguageId)
         {
-            var result = _studySetService.GetByNativeAndTargetLanguageIds(nativeLanguageId, targetLanguageId);
+            var result = _studySetService.GetByTargetAndNativeLanguageIds(targetLanguageId, nativeLanguageId);
 
             if (result.Success)
             {

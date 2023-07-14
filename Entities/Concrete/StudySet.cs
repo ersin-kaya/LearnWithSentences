@@ -8,8 +8,8 @@ namespace Entities.Concrete
 		public int Id { get; set; }
 		public int AccountId { get; set; }
 		public int FolderId { get; set; }
-		public int NativeLanguageId { get; set; }
-		public int TargetLanguageId { get; set; }
+        public int TargetLanguageId { get; set; }
+        public int NativeLanguageId { get; set; }
 		public string Name { get; set; }
 		public int Priority { get; set; }
 		public bool Visibility { get; set; }

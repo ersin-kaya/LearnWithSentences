@@ -13,7 +13,7 @@ namespace Business.Abstract
 		IDataResult<StudySet> GetById(int studySetId);
         IDataResult<List<StudySet>> GetByAccountId(int accountId);
         IDataResult<List<StudySet>> GetByFolderId(int folderId);
-		IDataResult<List<StudySet>> GetByNativeAndTargetLanguageIds(int nativeLanguageId, int targetLanguageId);
+		IDataResult<List<StudySet>> GetByTargetAndNativeLanguageIds(int targetLanguageId, int nativeLanguageId);
 	}
 }
 
