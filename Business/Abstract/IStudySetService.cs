@@ -8,6 +8,7 @@ namespace Business.Abstract
 	{
 		IResult Add(StudySet studySet);
 		IResult Update(StudySet studySet);
+		IResult Delete(StudySet studySet);
 		IDataResult<List<StudySet>> GetAll();
 		IDataResult<StudySet> GetById(int studySetId);
         IDataResult<List<StudySet>> GetByAccountId(int accountId);

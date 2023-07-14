@@ -30,7 +30,7 @@ namespace Business.Concrete
         [CacheRemoveAspect("IStudySetService.Get")]
         public IResult Add(StudySet studySet)
         {
-            IResult result = BusinessRules.Run(CheckIfStudySetNameExists(studySet.Name));
+            IResult result = BusinessRules.Run(CheckIfStudySetNameExists(studySet));
             if (result != null)
             {
                 return result;
@@ -40,38 +40,47 @@ namespace Business.Concrete
             return new SuccessResult(_message.StudySetAdded);
         }
 
+        [SecuredOperation("studyset.delete,studyset,admin")]
+        [CacheRemoveAspect("IStudySetService.Get")]
+        public IResult Delete(StudySet studySet)
+        {
+            studySet.Visibility = false;
+            _studySetDal.Update(studySet);
+            return new SuccessResult(_message.StudySetDeleted);
+        }
+
         [CacheAspect]
         [PerformanceAspect(4)]
         public IDataResult<List<StudySet>> GetAll()
         {
-            return new SuccessDataResult<List<StudySet>>(_studySetDal.GetAll(), _message.StudySetsListed);
+            return new SuccessDataResult<List<StudySet>>(_studySetDal.GetAll(s => s.Visibility == true), _message.StudySetsListed);
         }
 
         [CacheAspect]
         [PerformanceAspect(3)]
         public IDataResult<List<StudySet>> GetByAccountId(int accountId)
         {
-            return new SuccessDataResult<List<StudySet>>(_studySetDal.GetAll(s => s.AccountId == accountId));
+            return new SuccessDataResult<List<StudySet>>(_studySetDal.GetAll(s => s.AccountId == accountId && s.Visibility == true));
         }
 
         [CacheAspect]
         [PerformanceAspect(3)]
         public IDataResult<List<StudySet>> GetByFolderId(int folderId)
         {
-            return new SuccessDataResult<List<StudySet>>(_studySetDal.GetAll(s => s.FolderId == folderId));
+            return new SuccessDataResult<List<StudySet>>(_studySetDal.GetAll(s => s.FolderId == folderId && s.Visibility == true));
         }
 
         [CacheAspect]
         public IDataResult<StudySet> GetById(int studySetId)
         {
-            return new SuccessDataResult<StudySet>(_studySetDal.Get(s => s.Id == studySetId));
+            return new SuccessDataResult<StudySet>(_studySetDal.Get(s => s.Id == studySetId && s.Visibility == true));
         }
 
         [CacheAspect]
         [PerformanceAspect(4)]
         public IDataResult<List<StudySet>> GetByNativeAndTargetLanguageIds(int nativeLanguageId, int targetLanguageId)
         {
-            return new SuccessDataResult<List<StudySet>>(_studySetDal.GetAll(s => s.NativeLanguageId == nativeLanguageId && s.TargetLanguageId == targetLanguageId));
+            return new SuccessDataResult<List<StudySet>>(_studySetDal.GetAll(s => s.NativeLanguageId == nativeLanguageId && s.TargetLanguageId == targetLanguageId && s.Visibility == true));
         }
 
         [SecuredOperation("studyset.update,studyset,admin")]
@@ -79,7 +88,7 @@ namespace Business.Concrete
         [CacheRemoveAspect("IStudySetService.Get")]
         public IResult Update(StudySet studySet)
         {
-            IResult result = BusinessRules.Run(CheckIfStudySetNameExists(studySet.Name));
+            IResult result = BusinessRules.Run(CheckIfStudySetNameExists(studySet));
             if (result != null)
             {
                 return result;
@@ -89,10 +98,9 @@ namespace Business.Concrete
             return new SuccessResult(_message.StudySetUpdated);
         }
 
-        //refactor - add accountId
-        private IResult CheckIfStudySetNameExists(string studySetName)
+        private IResult CheckIfStudySetNameExists(StudySet studySet)
         {
-            var result = _studySetDal.GetAll(s => s.Name == studySetName).Any();
+            var result = _studySetDal.GetAll(s => s.AccountId == studySet.AccountId && s.Name == studySet.Name && s.Visibility == true).Any();
             if (result)
             {
                 return new ErrorResult(_message.StudySetAlreadyExists);

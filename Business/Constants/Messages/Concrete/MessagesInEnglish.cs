@@ -31,6 +31,7 @@ namespace Business.Constants.Messages.Concrete
             StudySetAlreadyExists = "The study set name already exists.";
             StudySetAdded = "The study set has been successfully added.";
             StudySetUpdated = "The study set has been updated.";
+            StudySetDeleted = "The study set has been deleted.";
         }
 
         //Parse Errors
@@ -56,6 +57,7 @@ namespace Business.Constants.Messages.Concrete
         public string StudySetAlreadyExists { get; }
         public string StudySetAdded { get; }
         public string StudySetUpdated { get; }
+        public string StudySetDeleted { get; }
     }
 }
 
