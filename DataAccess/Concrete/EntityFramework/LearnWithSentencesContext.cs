@@ -18,7 +18,6 @@ namespace DataAccess.Concrete.EntityFramework
             optionsBuilder.UseSqlServer("Server="+myServerAddress+";Database="+myDatabase+";User="+myUsername+";Password="+myPassword+";Encrypt=False;");
         }
 
-        public DbSet<SomeFeatureEntity> SomeFeatureEntities { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<AccountOperationClaim> AccountOperationClaims { get; set; }

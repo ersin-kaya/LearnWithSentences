@@ -16,9 +16,6 @@ namespace Business.DependencyResolvers.Autofac
 	{
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<EfSomeFeatureEntityDal>().As<ISomeFeatureEntityDal>().SingleInstance();
-            builder.RegisterType<SomeFeatureEntityManager>().As<ISomeFeatureEntityService>().SingleInstance();
-
             builder.RegisterType<EfLanguageDal>().As<ILanguageDal>().SingleInstance();
             builder.RegisterType<LanguageManager>().As<ILanguageService>().SingleInstance();
 
