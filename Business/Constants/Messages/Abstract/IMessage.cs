@@ -26,6 +26,11 @@ namespace Business.Constants.Messages.Abstract
         string StudySetAdded { get; }
         string StudySetUpdated { get; }
         string StudySetDeleted { get; }
+
+        //Term
+        string TermAdded { get; }
+        string TermUpdated { get; }
+        string TermDeleted { get; }
     }
 }
 

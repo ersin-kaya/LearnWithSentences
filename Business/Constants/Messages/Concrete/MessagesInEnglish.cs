@@ -31,6 +31,11 @@ namespace Business.Constants.Messages.Concrete
             StudySetAdded = "The study set has been successfully added.";
             StudySetUpdated = "The study set has been updated.";
             StudySetDeleted = "The study set has been deleted.";
+
+            //Term
+            TermAdded = "The term has been successfully added.";
+            TermUpdated = "The term has been updated.";
+            TermDeleted = "The term has been deleted.";
         }
 
         //Parse Errors
@@ -56,6 +61,11 @@ namespace Business.Constants.Messages.Concrete
         public string StudySetAdded { get; }
         public string StudySetUpdated { get; }
         public string StudySetDeleted { get; }
+
+        //Term
+        public string TermAdded { get; }
+        public string TermUpdated { get; }
+        public string TermDeleted { get; }
     }
 }
 
