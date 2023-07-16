@@ -9,7 +9,7 @@ namespace Business.ValidationRules.FluentValidation
 		public LanguageValidator()
 		{
 			RuleFor(l => l.Name).NotEmpty();
-			RuleFor(l => l.Name).MinimumLength(2);
+			RuleFor(l => l.Name).MaximumLength(30);
 		}
 	}
 }

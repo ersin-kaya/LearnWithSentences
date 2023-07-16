@@ -9,6 +9,7 @@ namespace Business.ValidationRules.FluentValidation
 		public StudySetValidator()
 		{
 			RuleFor(s => s.Name).NotEmpty();
+			RuleFor(s => s.Name).MaximumLength(40);
 		}
 	}
 }

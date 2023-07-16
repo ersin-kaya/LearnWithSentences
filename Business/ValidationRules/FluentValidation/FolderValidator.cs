@@ -9,7 +9,7 @@ namespace Business.ValidationRules.FluentValidation
 		public FolderValidator()
 		{
 			RuleFor(f => f.Name).NotEmpty();
-			RuleFor(f => f.Name).MinimumLength(3);
+			RuleFor(f => f.Name).MaximumLength(40);
 		}
 	}
 }
