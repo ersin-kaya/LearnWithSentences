@@ -64,9 +64,9 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
-        public IDataResult<Folder> GetById(int folderId)
+        public IDataResult<Folder> GetById(int id)
         {
-            return new SuccessDataResult<Folder>(_folderDal.Get(f => f.Id == folderId && f.Visibility == true));
+            return new SuccessDataResult<Folder>(_folderDal.Get(f => f.Id == id && f.Visibility == true));
         }
 
         [SecuredOperation("folder.update,folder,admin")]

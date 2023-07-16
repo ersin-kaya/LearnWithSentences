@@ -57,9 +57,9 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
-        public IDataResult<Language> GetById(int languageId)
+        public IDataResult<Language> GetById(int id)
         {
-            return new SuccessDataResult<Language>(_languageDal.Get(l => l.Id == languageId && l.Visibility == true));
+            return new SuccessDataResult<Language>(_languageDal.Get(l => l.Id == id && l.Visibility == true));
         }
 
         [SecuredOperation("language.update,language,admin")]

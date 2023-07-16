@@ -71,9 +71,9 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
-        public IDataResult<StudySet> GetById(int studySetId)
+        public IDataResult<StudySet> GetById(int id)
         {
-            return new SuccessDataResult<StudySet>(_studySetDal.Get(s => s.Id == studySetId && s.Visibility == true));
+            return new SuccessDataResult<StudySet>(_studySetDal.Get(s => s.Id == id && s.Visibility == true));
         }
 
         [CacheAspect]
