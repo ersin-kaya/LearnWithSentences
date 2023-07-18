@@ -4,6 +4,7 @@ using Business.BusinessAspects.Autofac;
 using Business.Constants.Messages.Abstract;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Performance;
 using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
@@ -48,6 +49,7 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
+        [PerformanceAspect(2)]
         public IDataResult<List<Term>> GetByStudySetId(int studySetId)
         {
             return new SuccessDataResult<List<Term>>(_termDal.GetAll(t => t.StudySetId == studySetId && t.Visibility == true));
