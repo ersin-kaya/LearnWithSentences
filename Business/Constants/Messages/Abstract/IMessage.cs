@@ -31,6 +31,11 @@ namespace Business.Constants.Messages.Abstract
         string TermAdded { get; }
         string TermUpdated { get; }
         string TermDeleted { get; }
+
+        //Definition
+        string DefinitionAdded { get; }
+        string DefinitionUpdated { get; }
+        string DefinitionDeleted { get; }
     }
 }
 

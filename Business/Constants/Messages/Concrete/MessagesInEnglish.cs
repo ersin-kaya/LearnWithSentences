@@ -36,6 +36,11 @@ namespace Business.Constants.Messages.Concrete
             TermAdded = "The term has been successfully added.";
             TermUpdated = "The term has been updated.";
             TermDeleted = "The term has been deleted.";
+
+            //Definition
+            DefinitionAdded = "The definition has been successfully added.";
+            DefinitionUpdated = "The definition has been updated.";
+            DefinitionDeleted = "The definition has been deleted.";
         }
 
         //Parse Errors
@@ -66,6 +71,11 @@ namespace Business.Constants.Messages.Concrete
         public string TermAdded { get; }
         public string TermUpdated { get; }
         public string TermDeleted { get; }
+
+        //Definition
+        public string DefinitionAdded { get; }
+        public string DefinitionUpdated { get; }
+        public string DefinitionDeleted { get; }
     }
 }
 
